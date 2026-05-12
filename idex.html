@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>李法泉道长｜东方智慧实战孵化</title>
+  <meta name="description" content="以周易、六爻、八字、风水与东方智慧为基础的实战型学习体系，帮助有缘人建立传统文化认知、咨询能力与长期发展路径。" />
+  <style>
+    :root {
+      --bg: #f7f3ea;
+      --paper: #fffaf0;
+      --ink: #221b14;
+      --muted: #7b6b5a;
+      --gold: #b58a45;
+      --deep: #2f3a2f;
+      --line: rgba(80, 60, 35, 0.16);
+      --shadow: 0 24px 80px rgba(41, 31, 20, 0.12);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+      background:
+        radial-gradient(circle at top left, rgba(181, 138, 69, 0.16), transparent 32%),
+        radial-gradient(circle at 80% 10%, rgba(47, 58, 47, 0.12), transparent 28%),
+        linear-gradient(180deg, #f8f1e4 0%, #f6efe3 42%, #efe7d8 100%);
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(247, 243, 234, 0.76);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .seal {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff8e8;
+      background: var(--deep);
+      box-shadow: 0 8px 24px rgba(47, 58, 47, 0.2);
+      font-size: 18px;
+      flex: 0 0 auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 13px 22px;
+      background: var(--deep);
+      color: #fff8ea;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      box-shadow: 0 14px 30px rgba(47, 58, 47, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(47, 58, 47, 0.28);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--deep);
+      border: 1px solid rgba(47, 58, 47, 0.24);
+      box-shadow: none;
+    }
+
+    .hero {
+      padding: 86px 0 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 26px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .trust-item {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--muted);
+      background: rgba(255, 250, 240, 0.58);
+      font-size: 14px;
+    }
+
+    .hero-card {
+      position: relative;
+      background: rgba(255, 250, 240, 0.74);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "☯";
+      position: absolute;
+      right: -18px;
+      top: -42px;
+      font-size: 160px;
+      color: rgba(181, 138, 69, 0.12);
+      line-height: 1;
+    }
+
+    .card-title {
+      position: relative;
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .quote {
+      position: relative;
+      color: var(--muted);
+      font-size: 17px;
+      border-left: 3px solid var(--gold);
+      padding-left: 18px;
+      margin-bottom: 24px;
+    }
+
+    .mini-list {
+      position: relative;
+      display: grid;
+      gap: 14px;
+    }
+
+    .mini-list div {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--ink);
+    }
+
+    .dot {
+      flex: 0 0 9px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 11px;
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-head.center {
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card,
+    .path-card,
+    .fit-card,
+    .module-card {
+      background: rgba(255, 250, 240, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 14px 46px rgba(41, 31, 20, 0.07);
+    }
+
+    .feature-card h3,
+    .path-card h3,
+    .fit-card h3,
+    .module-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p,
+    .path-card p,
+    .fit-card p,
+    .module-card p {
+      color: var(--muted);
+    }
+
+    .num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(181, 138, 69, 0.16);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .banner {
+      background:
+        linear-gradient(135deg, rgba(47, 58, 47, 0.96), rgba(43, 50, 37, 0.96)),
+        radial-gradient(circle at top right, rgba(181, 138, 69, 0.28), transparent 30%);
+      color: #fff8ea;
+      border-radius: 34px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+      box-shadow: 0 28px 80px rgba(47, 58, 47, 0.26);
+    }
+
+    .banner p {
+      color: rgba(255, 248, 234, 0.78);
+      font-size: 18px;
+    }
+
+    .banner .btn {
+      background: #fff8ea;
+      color: var(--deep);
+      box-shadow: none;
+    }
+
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .module-card {
+      min-height: 190px;
+    }
+
+    .module-card span {
+      display: inline-block;
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, 0.66);
+      border-radius: 24px;
+    }
+
+    .timeline-time {
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .timeline-content h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      color: var(--muted);
+    }
+
+    .fit-card.good {
+      border-color: rgba(47, 58, 47, 0.28);
+    }
+
+    .fit-card.caution {
+      border-color: rgba(181, 138, 69, 0.35);
+    }
+
+    .fit-card ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .fit-card li {
+      margin: 8px 0;
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      background: rgba(255, 250, 240, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px 22px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .cta {
+      padding: 76px 0 96px;
+    }
+
+    .cta-box {
+      text-align: center;
+      background: rgba(255, 250, 240, 0.76);
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      padding: 52px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 26px;
+      font-size: 18px;
+    }
+
+    .contact-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .contact-modal.is-open {
+      display: flex;
+    }
+
+    .contact-modal__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(34, 27, 20, 0.48);
+      backdrop-filter: blur(8px);
+    }
+
+    .contact-modal__box {
+      position: relative;
+      width: min(420px, 100%);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 38px 28px;
+      text-align: center;
+      box-shadow: 0 30px 100px rgba(34, 27, 20, 0.28);
+    }
+
+    .contact-modal__close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      width: 34px;
+      height: 34px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(47, 58, 47, 0.08);
+      color: var(--deep);
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .contact-modal__seal {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--deep);
+      color: #fff8ea;
+      font-size: 26px;
+      box-shadow: 0 16px 34px rgba(47, 58, 47, 0.2);
+    }
+
+    .contact-modal h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .contact-modal p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .contact-modal strong {
+      display: block;
+      margin: 10px 0 12px;
+      color: var(--deep);
+      font-size: 32px;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-modal__tip {
+      font-size: 14px !important;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .banner,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .modules {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 26px, 1120px);
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .grid-3,
+      .modules {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .banner,
+      .hero-card,
+      .cta-box {
+        padding: 28px;
+      }
+
+      .brand span:last-child {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="seal">道</span>
+        <span>李法泉道长｜东方智慧实战孵化</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#value">价值</a>
+        <a href="#system">体系</a>
+        <a href="#path">路径</a>
+        <a href="#fit">适合谁</a>
+        <button class="btn js-consult" type="button">申请了解</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">东方智慧 · 实战传承</div>
+
+          <h1>不是学几个术语，<br />而是建立一套能落地的本事。</h1>
+
+          <p>
+            面向真正想学习传统文化、周易命理、六爻问事、风水思维，并希望把它转化为稳定咨询能力的人。这里不讲玄乎，不做神化，只讲体系、实战、分寸与长期成长。
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn js-consult" type="button">申请成为学员</button>
+            <a class="btn secondary" href="#system">查看学习体系</a>
+          </div>
+
+          <div class="trust-row">
+            <span class="trust-item">周易问事</span>
+            <span class="trust-item">八字结构</span>
+            <span class="trust-item">风水秩序</span>
+            <span class="trust-item">咨询接单</span>
+            <span class="trust-item">长期陪跑</span>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h2 class="card-title">我收的不是“听课的人”</h2>
+
+          <p class="quote">
+            我更希望带出能独立判断、能稳住客户、能守住分寸、能把传统文化真正用到现实问题里的人。
+          </p>
+
+          <div class="mini-list">
+            <div>
+              <span class="dot"></span>
+              <span>不是背概念，而是训练看事、断事、说事的能力。</span>
+            </div>
+            <div>
+              <span class="dot"></span>
+              <span>不是制造神秘感，而是让你知道传统文化如何服务现实人生。</span>
+            </div>
+            <div>
+              <span class="dot"></span>
+              <span>不是只学术数，而是同时学习咨询表达、客户沟通与个人定位。</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="value">
+      <div class="container">
+        <div class="section-head center">
+          <div class="section-kicker">WHY THIS TRAINING</div>
+          <h2>为什么很多人学了很多，还是不会用？</h2>
+          <p>
+            传统文化学习最怕两件事：一是只背知识，没有实战；二是只会说玄话，解决不了现实问题。真正的学习，要能从“听懂”走向“会用”。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="feature-card">
+            <div class="num">01</div>
+            <h3>从知识到判断</h3>
+            <p>学会的不只是八字、六爻、风水的名词，而是面对具体问题时，如何提取关键信息、看清局势、判断轻重缓急。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="num">02</div>
+            <h3>从判断到表达</h3>
+            <p>咨询不是把结论丢给别人，而是把复杂信息讲清楚，让对方听得懂、能接受、知道下一步怎么调整。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="num">03</div>
+            <h3>从表达到承接</h3>
+            <p>真正能长期做下去的人，需要懂内容、懂客户、懂边界、懂交付，也懂如何建立自己的信任资产。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="banner">
+          <div>
+            <div class="section-kicker">CORE VALUE</div>
+            <h2>你学到的不是“神秘感”，而是可持续的东方智慧咨询能力。</h2>
+            <p>
+              一个人想靠传统文化走得长远，靠的不是话术，而是体系。能看懂问题，能稳住人心，能守住分寸，能持续输出有价值的内容，这才是真正的底层能力。
+            </p>
+          </div>
+
+          <div>
+            <button class="btn js-consult" type="button">我想了解学习方式</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="system">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">LEARNING SYSTEM</div>
+          <h2>一套围绕“实战”的综合学习体系</h2>
+          <p>
+            课程不是单点知识，而是围绕传统文化咨询的完整链路：看懂命局、判断事情、理解空间、承接客户、形成个人表达。
+          </p>
+        </div>
+
+        <div class="modules">
+          <div class="module-card">
+            <span>模块一</span>
+            <h3>八字基础与人生结构</h3>
+            <p>理解一个人的性格底色、人生阶段、事业关系、家庭模式与长期趋势。</p>
+          </div>
+
+          <div class="module-card">
+            <span>模块二</span>
+            <h3>六爻问事与趋势判断</h3>
+            <p>训练具体问题的判断能力，学会看事情的成败、时机、阻力与应对。</p>
+          </div>
+
+          <div class="module-card">
+            <span>模块三</span>
+            <h3>风水与居住秩序</h3>
+            <p>从空间、气场、动线与生活秩序入手，理解环境如何影响人的状态。</p>
+          </div>
+
+          <div class="module-card">
+            <span>模块四</span>
+            <h3>咨询表达与客户承接</h3>
+            <p>学习如何提问、如何判断需求、如何表达结论、如何避免过度承诺。</p>
+          </div>
+
+          <div class="module-card">
+            <span>模块五</span>
+            <h3>内容输出与个人定位</h3>
+            <p>把你的知识变成文章、短视频、推文与公开笔记，建立自己的长期信任。</p>
+          </div>
+
+          <div class="module-card">
+            <span>模块六</span>
+            <h3>接单方法与交付流程</h3>
+            <p>理解从初筛、沟通、判断、反馈到复盘的完整流程，让服务更稳定。</p>
+          </div>
+
+          <div class="module-card">
+            <span>模块七</span>
+            <h3>疗愈与思维模式</h3>
+            <p>咨询的背后是人心。既要懂术，也要懂人，知道如何帮助人回到秩序。</p>
+          </div>
+
+          <div class="module-card">
+            <span>模块八</span>
+            <h3>长期发展路径</h3>
+            <p>建立你的知识资产、服务边界与成长节奏，不靠短期热闹，而靠长期沉淀。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="path">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">GROWTH PATH</div>
+          <h2>从入门到能独立承接，要走清楚三步</h2>
+          <p>学传统文化，最重要的不是一开始学得多，而是每一步都能落到现实应用里。</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-time">第一阶段</div>
+            <div class="timeline-content">
+              <h3>建立基本盘：术理、概念、判断框架</h3>
+              <p>先把八字、六爻、风水的基础逻辑理顺，知道每门学问解决什么问题，不能解决什么问题。</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">第二阶段</div>
+            <div class="timeline-content">
+              <h3>进入实战：案例、问事、表达训练</h3>
+              <p>围绕真实问题训练判断能力，学习如何把复杂结论讲清楚，而不是只会说玄学术语。</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">第三阶段</div>
+            <div class="timeline-content">
+              <h3>形成系统：定位、内容、服务流程</h3>
+              <p>把你的能力变成可持续的咨询服务，形成自己的内容风格、客户承接方式与交付边界。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fit">
+      <div class="container">
+        <div class="section-head center">
+          <div class="section-kicker">WHO IS IT FOR</div>
+          <h2>这件事，适合有缘分也有耐心的人</h2>
+          <p>
+            收徒不是简单卖课。传统文化需要敬畏，也需要长期训练。适不适合，比热情更重要。
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="fit-card good">
+            <h3>适合你，如果你：</h3>
+            <ul>
+              <li>真心喜欢周易、命理、风水、道家文化。</li>
+              <li>不满足于碎片知识，想建立完整体系。</li>
+              <li>希望未来能用传统文化帮助自己，也帮助别人。</li>
+              <li>愿意练习表达、复盘案例、打磨咨询能力。</li>
+              <li>明白传统文化不是万能承诺，而是理解人生的一种方法。</li>
+            </ul>
+          </div>
+
+          <div class="fit-card caution">
+            <h3>不适合你，如果你：</h3>
+            <ul>
+              <li>只想快速学几个话术，马上包装自己。</li>
+              <li>期待学完以后立刻解决所有人生问题。</li>
+              <li>喜欢夸大承诺，动不动就说保证、一定、必成。</li>
+              <li>不愿意练习，只想听结论、拿模板。</li>
+              <li>对传统文化没有敬畏，只把它当成短期变现工具。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">FAQ</div>
+          <h2>常见问题</h2>
+        </div>
+
+        <div class="faq">
+          <details open>
+            <summary>完全没有基础，可以学吗？</summary>
+            <p>可以从基础开始，但需要愿意长期练习。传统文化不是听懂就会，而是要在案例、表达和复盘中慢慢形成判断力。</p>
+          </details>
+
+          <details>
+            <summary>学这个一定能接单赚钱吗？</summary>
+            <p>不做这种承诺。学习可以帮助你建立认知、方法、表达和服务能力，但结果取决于个人基础、执行力、内容输出、沟通能力与长期积累。</p>
+          </details>
+
+          <details>
+            <summary>是不是只教六爻或者八字？</summary>
+            <p>不是单一课程，而是综合体系。内容会涉及八字、六爻、风水、咨询表达、接单思路、内容输出、疗愈与思维模式。</p>
+          </details>
+
+          <details>
+            <summary>学习过程中更重视什么？</summary>
+            <p>重视实战、边界和分寸。会判断是一部分，会把话讲清楚、讲稳、讲得对别人有帮助，也很重要。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div class="section-kicker">APPLY TO LEARN</div>
+
+          <h2>如果你想系统学习，可以先从一次沟通开始。</h2>
+
+          <p>
+            你可以简单介绍自己的情况：为什么想学、有没有基础、希望未来如何使用这套能力。我会先判断是否适合进入学习，而不是盲目开始。
+          </p>
+
+          <button class="btn js-consult" type="button">发送申请了解</button>
+
+          <p style="margin-top: 18px; font-size: 14px;">
+            点击按钮后查看微信联系方式，添加时可备注：收徒学习。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="contact-modal" id="contactModal" aria-hidden="true">
+    <div class="contact-modal__backdrop" data-close-modal></div>
+
+    <div class="contact-modal__box" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+      <button class="contact-modal__close" type="button" aria-label="关闭" data-close-modal>×</button>
+
+      <div class="contact-modal__seal">道</div>
+
+      <h2 id="contactModalTitle">详细咨询</h2>
+
+      <p>李道长微信</p>
+
+      <strong>deqian16</strong>
+
+      <p class="contact-modal__tip">添加时可备注：收徒学习</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 李法泉道长｜东方智慧实战孵化</span>
+      <span>本站内容仅作传统文化学习与人生参考，不替代法律、医疗、金融等专业建议。</span>
+    </div>
+  </footer>
+
+  <script>
+    const contactModal = document.getElementById("contactModal");
+    const consultButtons = document.querySelectorAll(".js-consult");
+    const closeButtons = document.querySelectorAll("[data-close-modal]");
+
+    function openContactModal() {
+      contactModal.classList.add("is-open");
+      contactModal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeContactModal() {
+      contactModal.classList.remove("is-open");
+      contactModal.setAttribute("aria-hidden", "true");
+    }
+
+    consultButtons.forEach((button) => {
+      button.addEventListener("click", openContactModal);
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", closeContactModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeContactModal();
+      }
+    });
+  </script>
+</body>
+</html>
